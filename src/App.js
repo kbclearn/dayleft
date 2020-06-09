@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React  from 'react';
 
-function App() {
+import Radium from 'radium';
+
+import './App.css';
+const style = { 
+  backgroundColor: 'green',
+  color : 'white',
+  font: 'inherit',
+  border: '1px solid red',
+  padding: '8px',
+  ':hover' : {
+    backgroundColor : 'lightgreen',
+    color : 'black'
+  }
+ 
+};
+
+
+const App =(prop)  => {
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <h2>exam- i am from main  </h2>
+    <button style={style} onClick={prop.click}>show result</button>           
     </div>
   );
 }
 
-export default App;
+export default Radium(App);
